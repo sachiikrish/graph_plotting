@@ -1,0 +1,47 @@
+:root {
+  --bg: #000;
+  --fg: #fff;
+  --accent: #ffd400;
+  --cyan: #00e5ff;
+  --muted: #bbb;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 1.15rem/1.5 system-ui, sans-serif;
+}
+.app { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+h1 { font-size: 1.8rem; margin: 0 0 .5rem; }
+.hint { color: var(--muted); max-width: 70ch; }
+.meta, .step-form, .actions { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0; align-items: flex-end; }
+label { display: flex; flex-direction: column; gap: .25rem; font-weight: 600; }
+input {
+  font: inherit; padding: .5rem .75rem; background: #111; color: var(--fg);
+  border: 2px solid var(--fg); border-radius: 6px; min-width: 14rem;
+}
+button {
+  font: inherit; font-weight: 700; padding: .6rem 1.1rem; cursor: pointer;
+  background: var(--accent); color: #000; border: 2px solid var(--accent); border-radius: 6px;
+}
+:focus-visible { outline: 4px solid var(--cyan); outline-offset: 3px; }
+.readout { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .25rem 1rem; border: 2px solid var(--fg); border-radius: 8px; padding: .75rem 1rem; }
+.readout p { margin: 0; }
+.status { border-left: 6px solid var(--accent); padding-left: .75rem; min-height: 1.5em; }
+.plane { width: 100%; max-width: 640px; aspect-ratio: 1; background: #000; border: 2px solid var(--fg); display: block; margin: 1rem 0; }
+.grid { stroke: #333; stroke-width: 1; }
+.axis { stroke: var(--fg); stroke-width: 3; }
+.curve { stroke: var(--cyan); stroke-width: 3; }
+.dot { fill: var(--fg); }
+.cursor { fill: var(--accent); stroke: #000; stroke-width: 1; }
+.review { fill: none; stroke: var(--accent); stroke-width: 3; vector-effect: non-scaling-stroke; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+.setup { border: 2px solid var(--fg); border-radius: 8px; padding: .75rem 1rem 1rem; display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0; }
+.setup legend { font-weight: 700; padding: 0 .5rem; }
+.setup:disabled { opacity: .6; }
+.plot-area { border: 3px solid transparent; border-radius: 8px; padding: .5rem; max-width: 664px; }
+.plot-area.on { border-color: var(--accent); }
+.plot-area:focus-visible { outline: 4px solid var(--cyan); outline-offset: 2px; }
+.axis-label { fill: var(--accent); font-weight: 700; }
+.caption { margin: 0; color: var(--muted); }
